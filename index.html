@@ -18,33 +18,31 @@
     <div class="container-fluid-lg">
       <div class="row fondo"> 
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid-lg">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link blanco" href="#" id="Up" target="_blank">CaC Movies</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="index2.html" target="_blank">Novedades</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="index3.html" target="_blank">Clásicos/Sagas</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-light" href="#Registro">Registrarse</a>
-                </li>
-                <li class="nav-item">
-                  <form action="Iniciar-Sesion">
-                    <input type="text" class="form-control" id="Usuario" placeholder="Usuario">
-                </li>
-                <li class="nav-item">
-                    <input type="text" class="form-control" id="Password" placeholder="Password">
-                </li>
-                <li class="nav-item">
-                    <button type="submit" class="btn green text-light">Iniciar Sesión</button>
+          <div class="container-fluid-lg">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link blanco" href="#" id="Up" target="_parent">CaC Movies</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#" id="novedades" target="_parent">Novedades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="" id="sagas" target="_parent">Clásicos/Sagas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="#Registro">Registrarse</a>
+              </li>
+              <li class="nav-item">
+                <div>
+                  <form id="loginForm">
+                    <input type="email" id="email" placeholder="Usuario" required>
+                    <input type="password" id="contrasena" minlength="6" placeholder="Password" required>
+                    <button type="submit">Iniciar Sesión</button>
                   </form>
-                </li>
-              </ul>  
-            </div>
+                </div>
+              </li>
+            </ul>  
+          </div>
         </nav>
       </div>    
     </div>
@@ -92,32 +90,52 @@
     <hr>
     <div>
       
-      <h2 id="Registro">REGISTRATE!!!</h2>
-      <form action="Enviar" class="centrado">
-        <label class="formulario" for="Nombre/s">Nombre/s:</label><br>
-        <input type="text" id="Nombre/s" name="Nombre/s" required><br>
-        <label class="formulario" for="Apellido/s">Apellido/s:</label><br>
-        <input type="text" id="Apellido/s" name="Apellido/s" required><br>
-        <label class="formulario" for="Edad">Edad:</label><br>
-        <input type="text" id="Edad" name="Edad" required><br>
-        <label class="formulario" for="Sexo">Sexo</label><br>
-        <label for="Masculino" class="opciones"><input type="radio" id="Masculino" name="Sexo" value="Masculino">Masculino</label>       
-        <label for="Femenino" class="opciones"><input type="radio" id="Femenino" name="Sexo" value="Femenino">Femenino</label>
-        <label for="Otro" class="opciones"><input type="radio" id="Otro" name="Sexo" value="Otro">Otro</label>
-        <br>
-        <label class="formulario" for="Direccion:">Direccion:</label><br>
-        <input type="text" id="Direccion:" name="Direccion:" required><br>
-        <label class="formulario" for="CP">CP</label><br>
-        <input type="text" id="CP" name="CP" required><br>
-        <label class="formulario" for="lname">Provincia</label><br>
-        <input type="text" id="Provincia" name="Provincia" required><br>
-        <label class="formulario" for="lname">Pais</label><br>
-        <input type="text" id="Pais" name="Pais" required><br>
-        <label class="formulario" for="lname">Usuario</label><br>
-        <input type="text" id="Usuario" name="Usuario" placeholder="e-mail" required><br>
-        <label class="formulario" for="lname">Password</label><br>
-        <input type="text" id="Password" name="Password" placeholder="Password" required><br>
-        <button type="button" class="btn green btn-block text-light">Enviar</button>
+    <h2 id="Registro">REGISTRATE!!!</h2>
+      <form action="Enviar" class="centrado" id="formulario1">
+
+        <label class="formulario" required>Nombre/s:</label><br>
+          <input type="text" id="nombre" name="Nombre/s" required><br>
+        
+        <label class="formulario" autcomplete="on" required>Apellido/s: </label><br>
+          <input type="text" id="apellido" name="Apellido/s" required><br>
+
+        <label class="formulario" autcomplete="on" required>Edad: </label><br>
+          <input type="number" id="edad" name="Edad" min="1" max="100" required><br>
+
+        <label class="formulario" autcomplete="on" required>Sexo</label><br>
+
+        <label class="opciones" >
+          <input type="radio" id="masculino" name="Sexo" value="Masculino" required>Masculino
+        </label>  
+        <label class="opciones" >
+          <input type="radio" id="femenino" name="Sexo" value="Femenino" required>Femenino
+        </label>
+        <label class="opciones" >
+          <input type="radio" id="Otro" name="Sexo" value="Otro"required>Otro
+        </label><br>
+        
+        <label class="formulario" autcomplete="on" required> Direccion: </label><br>
+          <input type="text" id="direccion:" name="Direccion:" required><br>
+
+        <label class="formulario" autcomplete="on" required>CP </label><br>
+          <input type="text" id="cp" name="CP" required><br>
+          
+        <label class="formulario" autcomplete="on" required>Provincia</label><br>
+          <input type="text" id="provincia" name="Provincia" required><br>
+
+        <label class="formulario" autcomplete="on" required>Pais</label><br>
+          <input type="text" id="pais" name="Pais" required><br>
+
+        <label class="formulario" autcomplete="on" required>Usuario</label><br>
+          <input type="text" id="email" name="Usuario" placeholder="e-mail" required><br>
+        <label class="formulario" autcomplete="on" required>Password</label><br>
+          <input type="text" id="password" name="Password" placeholder="Password" required><br>
+
+        <button type="submit" class="btn green btn-block text-light" id="btnEnviar">
+          Enviar
+        </button>
+        <p id="mensajeError"></p>
+
       </form>
     </div> 
   <div>
@@ -140,6 +158,7 @@
     </div>
   </footer>
   </section>
+  <script src="..//CaC Movies/js/myindex.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
 </body>
 </html>
